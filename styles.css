@@ -1,0 +1,138 @@
+.zooKeeperSign {
+  background-image: url(/assets/wood-bg.png);
+  background-size: auto;
+  background-position: center;
+}
+
+.zooPin {
+  /* Sets the height to 30% of the viewport height */
+  height: 17.5rem;
+  /* Sets the width to 100% of the container */
+  width: 100%;
+  /* Applies a background image using the provided URL */
+  background-image: url("/assets/grass-bg.webp");
+  /* Sets the background image size to contain within the element */
+  background-size: contain;
+  /* Adds a double black border with a thickness of 10 pixels */
+  border: double black 10px;
+}
+
+.waterPin {
+  /* Sets the height to 30% of the viewport height */
+  height: 17.5rem;
+  /* Sets the width to 100% of the container */
+  width: 100%;
+  /* Applies a background image using the provided URL */
+  background-image: url("/assets/water-bg.jpg");
+  /* Sets the background image size to contain within the element */
+  background-size: contain;
+  /* Adds a double black border with a thickness of 10 pixels */
+  border: double black 10px;
+}
+
+.icePin {
+  /* Sets the height to 30% of the viewport height */
+  height: 17.5rem;
+  /* Sets the width to 100% of the container */
+  width: 100%;
+  /* Applies a background image using the provided URL */
+  background-image: url("/assets/ice-bg.jpg");
+  /* Sets the background image size to contain within the element */
+  background-size: contain;
+  /* Adds a double black border with a thickness of 10 pixels */
+  border: double black 10px;
+}
+
+.libraryPin {
+  /* Sets the height to 30% of the viewport height */
+  height: 17.5rem;
+  /* Sets the width to 100% of the container */
+  width: 100%;
+  /* Applies a background image using the provided URL */
+  background-image: url("/assets/library-bg.jpg");
+  /* Sets the background image size to cover the entire element */
+  background-size: cover;
+  background-position: center;
+  /* Adds a double black border with a thickness of 10 pixels */
+  border: double black 10px;
+  position: relative;
+}
+
+.animal {
+  /* Sets the cursor to a pointer (hand) when hovering over the element */
+  cursor: pointer;
+  /* Prevents the element's text from being selectable by the user */
+  user-select: none;
+  -webkit-user-select: none; /* For Safari compatibility */
+}
+
+p {
+  /* Removes the default margin from paragraphs */
+  margin: 0;
+}
+
+body {
+  /* Sets the background color of the body to skyblue */
+  background-color: rgb(174, 222, 241);
+}
+
+.oslo {
+  position: absolute;
+  top: 200px;
+}
+
+.font-oslo {
+  font-size: 5rem;
+}
+
+.mick {
+  background-image: url("https://emoji.slack-edge.com/T1GGQN1RU/mickpog/1aaa3a6794291130.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 100%;
+  border: 2px rgba(0, 0, 0, 0.75) solid;
+}
+
+.mick:hover {
+  border: solid 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px black;
+}
+
+.treat {
+  background-image: url("assets/cute-cat-burger-cartoon-icon-illustration-food-animal-icon-concept-isolated-flat-cartoon-style_138676-1321.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 100%;
+  border: 2px rgba(0, 0, 0, 0.75) solid;
+}
+
+.treat:hover {
+  border: solid 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px black;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(/assets/KRADAYATTHEZOO-8EGN.TTF);
+}
+.zooFont {
+  font-family: myFirstFont;
+  font-size: 6rem;
+  color: white;
+  text-shadow: 0px 0px 15px black;
+}
+
+.signBlur {
+  -webkit-backdrop-filter: blur(9px);
+  background-color: rgba(0, 0, 0, 0.401);
+}
+
+.text-shadow {
+  text-shadow: 0px 0px 5px black;
+}

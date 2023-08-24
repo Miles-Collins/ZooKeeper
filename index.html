@@ -22,6 +22,196 @@
     <title>Zoo Keeper</title>
   </head>
   <body>
-    <script src="main.js"></script>
+    <!-- Header section -->
+    <header class="container-fluid zooKeeperSign mb-5">
+      <!-- Row containing logo and money/income information -->
+      <div class="row align-items-center signBlur text-light text-shadow">
+        <!-- Logo -->
+
+        <div class="col-3 d-flex justify-content-around align-items-center">
+          <div id="mick">
+            <button
+              title="Buy Mick"
+              type="button"
+              onclick="buyMick()"
+              class="btn mick"
+            ></button>
+            <p class="text-center">Mick</p>
+          </div>
+          <div class="d-flex flex-column justify-content-center">
+            <button
+              title="Heal Random Animal"
+              type="button"
+              onclick="randomHeal()"
+              class="btn treat"
+            ></button>
+            <p class="text-center">Animal Treat</p>
+          </div>
+        </div>
+        <div class="col-6 text-center">
+          <h1 class="mb-0 zooFont text-uppercase">Zoo Keeper</h1>
+        </div>
+        <div class="col-3 text-end px-3">
+          <!-- Money and Income Display -->
+          <p class="fs-5 p-0">Money: <span id="money">$0</span></p>
+          <p class="fs-5 p-0">Income: <span id="income">$0</span></p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main section -->
+    <main>
+      <section class="container-fluid">
+        <!-- Money and Income Display -->
+        <div class="row justify-content-center align-items-center">
+          <!-- Individual Animal Sections -->
+          <!-- Each section represents an animal -->
+          <!-- SECTION TONY -->
+          <div id="Tony" class="col-10 col-md-3 text-center">
+            <!-- Creating a marquee effect for the animal's name -->
+            <marquee
+              behavior="alternate"
+              direction="up"
+              scrollamount="25"
+              class=""
+            >
+              <marquee behavior="alternate" direction="left">
+                <!-- Animal icon with a click event to feed the animal -->
+                <h1 onclick="feedAnimal('Tony')" class="animal">🐅</h1>
+              </marquee>
+            </marquee>
+            <!-- Displaying the animal's name and hunger level -->
+            <h5>Tony | 🥰 | Hunger: 100%</h5>
+          </div>
+
+          <!-- SECTION Harambe -->
+          <div id="Harambe" class="col-10 col-md-3 text-center">
+            <!-- Creating a marquee effect for the animal's name -->
+            <marquee
+              behavior="alternate"
+              direction="up"
+              scrollamount="7"
+              class="text-light"
+            >
+              <marquee behavior="alternate" direction="left">
+                <!-- Animal icon with a click event to feed the animal -->
+                <h1 onclick="feedAnimal('Harambe')" class="animal">🦍</h1>
+              </marquee>
+            </marquee>
+            <!-- Displaying the animal's name and hunger level -->
+            <h5>Harambe | 🥰 | Hunger: 100%</h5>
+          </div>
+
+          <!-- SECTION Otto -->
+          <div id="Otto" class="col-10 col-md-3 text-center">
+            <!-- Creating a marquee effect for the animal's name -->
+            <marquee
+              behavior="alternate"
+              direction="down"
+              scrollamount="10"
+              class="text-light"
+            >
+              <marquee behavior="alternate" direction="right">
+                <!-- Animal icon with a click event to feed the animal -->
+                <h1 onclick="feedAnimal('Otto')" class="animal">🦦</h1>
+              </marquee>
+            </marquee>
+            <!-- Displaying the animal's name and hunger level -->
+            <h5>Otto | 🥰 | Hunger: 100%</h5>
+          </div>
+
+          <!-- SECTION Thux -->
+          <div id="Thux" class="col-10 col-md-3 text-center">
+            <!-- Creating a marquee effect for the animal's name -->
+            <marquee
+              behavior="alternate"
+              direction="up"
+              scrollamount="5"
+              class="text-light"
+            >
+              <marquee behavior="alternate" direction="left">
+                <!-- Animal icon with a click event to feed the animal -->
+                <h1 onclick="feedAnimal('Thux')" class="animal">🐧</h1>
+              </marquee>
+            </marquee>
+            <!-- Displaying the animal's name and hunger level -->
+            <h5>Thux | 🥰 | Hunger: 100%</h5>
+          </div>
+
+          <!-- SECTION Roth -->
+          <div id="Roth" class="col-10 col-md-3 text-center">
+            <!-- Creating a marquee effect for the animal's name -->
+            <marquee
+              behavior="alternate"
+              direction="down"
+              scrollamount="1"
+              class="text-light"
+            >
+              <marquee behavior="alternate" direction="right">
+                <!-- Animal icon with a click event to feed the animal -->
+                <h1 onclick="feedAnimal('Roth')" class="animal">🦥</h1>
+              </marquee>
+            </marquee>
+            <!-- Displaying the animal's name and hunger level -->
+            <h5>Roth | 🥰 | Hunger: 100%</h5>
+          </div>
+
+          <!-- SECTION Ned -->
+          <div id="Ned" class="col-10 col-md-3 text-center">
+            <!-- Creating a marquee effect for the animal's name -->
+            <marquee
+              behavior="alternate"
+              direction="up"
+              scrollamount="2"
+              class="text-light"
+            >
+              <marquee behavior="alternate" direction="left">
+                <!-- Animal icon with a click event to feed the animal -->
+                <h1 onclick="feedAnimal('Ned')" class="animal">🐙</h1>
+              </marquee>
+            </marquee>
+            <!-- Displaying the animal's name and hunger level -->
+            <h5>Ned | 🥰 | Hunger: 100%</h5>
+          </div>
+
+          <!-- SECTION Kevin -->
+          <div id="Kevin" class="col-10 col-md-3 text-center">
+            <!-- Creating a marquee effect for the animal's name -->
+            <marquee
+              behavior="alternate"
+              direction="left"
+              scrollamount="2"
+              class="text-light"
+            >
+              <marquee behavior="alternate" direction="left">
+                <!-- Animal icon with a click event to feed the animal -->
+                <h1 onclick="feedAnimal('Kevin')" class="animal">🦚</h1>
+              </marquee>
+            </marquee>
+            <!-- Displaying the animal's name and hunger level -->
+            <h5>Kevin | 🥰 | Hunger: 100%</h5>
+          </div>
+
+          <!-- SECTION Oslo -->
+          <div id="Oslo" class="col-10 col-md-3 text-center">
+            <!-- Creating a marquee effect for the animal's name -->
+            <marquee
+              behavior="alternate"
+              direction="left"
+              scrollamount="1"
+              class="text-light"
+            >
+              <!-- Animal icon with a click event to feed the animal -->
+              <h1 onclick="feedAnimal('Oslo')" class="animal oslo">🦧</h1>
+            </marquee>
+            <!-- Displaying the animal's name and hunger level -->
+            <h5>Oslo | 🥰 | Hunger: 100%</h5>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Including JavaScript file -->
+    <script src=" main.js"></script>
   </body>
 </html>
