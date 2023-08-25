@@ -21,7 +21,7 @@
     <link rel="icon" type="images/x-icon" href="assets/CodeWorks-Logo.png" />
     <title>Zoo Keeper</title>
   </head>
-  <body>
+  <body id="effects" class="z-index-50">
     <!-- Header section -->
     <header class="container-fluid zooKeeperSign mb-5">
       <!-- Row containing logo and money/income information -->
@@ -29,23 +29,41 @@
         <!-- Logo -->
 
         <div class="col-3 d-flex justify-content-around align-items-center">
-          <div id="mick">
+          <div id="Mick">
             <button
               title="Buy Mick"
               type="button"
-              onclick="buyMick()"
+              onclick="buyUpgrade('Mick')"
               class="btn mick"
             ></button>
             <p class="text-center">Mick</p>
+          </div>
+          <div id="Jeremy">
+            <button
+              title="Buy Jeremy"
+              type="button"
+              onclick="buyUpgrade('Jeremy')"
+              class="btn jeremy"
+            ></button>
+            <p class="text-center">Jeremy</p>
           </div>
           <div class="d-flex flex-column justify-content-center">
             <button
               title="Heal Random Animal"
               type="button"
-              onclick="randomHeal()"
+              onclick="buyUpgrade('Pet')"
+              class="btn pet"
+            ></button>
+            <p class="text-center">Pet</p>
+          </div>
+          <div class="d-flex flex-column justify-content-center">
+            <button
+              title="Heal Random Animal"
+              type="button"
+              onclick="buyUpgrade('Treat')"
               class="btn treat"
             ></button>
-            <p class="text-center">Animal Treat</p>
+            <p class="text-center">Treat</p>
           </div>
         </div>
         <div class="col-6 text-center">
@@ -66,8 +84,8 @@
         <div class="row justify-content-center align-items-center">
           <!-- Individual Animal Sections -->
           <!-- Each section represents an animal -->
-          <!-- SECTION TONY -->
-          <div id="Tony" class="col-10 col-md-3 text-center">
+          <!-- SECTION GEORGIE -->
+          <div id="Georgie" class="col-10 col-md-3 text-center">
             <!-- Creating a marquee effect for the animal's name -->
             <marquee
               behavior="alternate"
@@ -77,7 +95,7 @@
             >
               <marquee behavior="alternate" direction="left">
                 <!-- Animal icon with a click event to feed the animal -->
-                <h1 onclick="feedAnimal('Tony')" class="animal">🐅</h1>
+                <h1 onclick="feedAnimal('Georgie')" class="animal">🐈</h1>
               </marquee>
             </marquee>
             <!-- Displaying the animal's name and hunger level -->

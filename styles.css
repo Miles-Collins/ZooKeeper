@@ -1,8 +1,16 @@
-.zooKeeperSign {
-  background-image: url(/assets/wood-bg.png);
-  background-size: auto;
-  background-position: center;
+/* SECTION CORE */
+
+p {
+  /* Removes the default margin from paragraphs */
+  margin: 0;
 }
+
+body {
+  /* Sets the background color of the body to skyblue */
+  background-color: rgb(174, 222, 241);
+}
+
+/* SECTION ZOO PINS */
 
 .zooPin {
   /* Sets the height to 30% of the viewport height */
@@ -58,6 +66,8 @@
   position: relative;
 }
 
+/* SECTION ANIMALS */
+
 .animal {
   /* Sets the cursor to a pointer (hand) when hovering over the element */
   cursor: pointer;
@@ -66,32 +76,34 @@
   -webkit-user-select: none; /* For Safari compatibility */
 }
 
-p {
-  /* Removes the default margin from paragraphs */
-  margin: 0;
-}
-
-body {
-  /* Sets the background color of the body to skyblue */
-  background-color: rgb(174, 222, 241);
-}
-
 .oslo {
   position: absolute;
   top: 200px;
 }
 
-.font-oslo {
-  font-size: 5rem;
+/* SECTION HEADER - SIGN */
+
+.zooKeeperSign {
+  background-image: url(/assets/wood-bg.png);
+  background-size: auto;
+  background-position: center;
 }
 
+.signBlur {
+  -webkit-backdrop-filter: blur(9px);
+  background-color: rgba(0, 0, 0, 0.401);
+}
+
+/* SECTION BUTTONS */
+
 .mick {
-  background-image: url("https://emoji.slack-edge.com/T1GGQN1RU/mickpog/1aaa3a6794291130.png");
-  background-size: cover;
+  background-image: url("/assets/mick.png");
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 5rem;
-  width: 5rem;
+  background-color: rgba(8, 236, 243, 1);
+  height: 4.5rem;
+  width: 4.5rem;
   border-radius: 100%;
   border: 2px rgba(0, 0, 0, 0.75) solid;
 }
@@ -99,15 +111,33 @@ body {
 .mick:hover {
   border: solid 2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px black;
+  background-color: rgba(8, 236, 243, 1);
+}
+.jeremy {
+  background-image: url("/assets/jeremy.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(8, 236, 243, 1);
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 100%;
+  border: 2px rgba(0, 0, 0, 0.75) solid;
+}
+
+.jeremy:hover {
+  border: solid 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px black;
+  background-color: rgba(8, 236, 243, 1);
 }
 
 .treat {
-  background-image: url("assets/cute-cat-burger-cartoon-icon-illustration-food-animal-icon-concept-isolated-flat-cartoon-style_138676-1321.webp");
+  background-image: url("assets/treat.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 5rem;
-  width: 5rem;
+  height: 4.5rem;
+  width: 4.5rem;
   border-radius: 100%;
   border: 2px rgba(0, 0, 0, 0.75) solid;
 }
@@ -116,23 +146,47 @@ body {
   border: solid 2px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px black;
 }
+.pet {
+  background-image: url("/assets/pet.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 100%;
+  border: 2px rgba(0, 0, 0, 0.75) solid;
+}
+
+.pet:hover {
+  border: solid 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px black;
+}
+
+/* SECTION FONT/TEXT */
 
 @font-face {
-  font-family: myFirstFont;
+  font-family: zooFont;
   src: url(/assets/KRADAYATTHEZOO-8EGN.TTF);
 }
 .zooFont {
-  font-family: myFirstFont;
+  font-family: zooFont;
   font-size: 6rem;
   color: white;
   text-shadow: 0px 0px 15px black;
 }
 
-.signBlur {
-  -webkit-backdrop-filter: blur(9px);
-  background-color: rgba(0, 0, 0, 0.401);
-}
-
 .text-shadow {
   text-shadow: 0px 0px 5px black;
+}
+
+.font-oslo {
+  font-size: 5rem;
+}
+
+/* SECTION */
+
+.healing {
+  background-image: url(/assets/sam.gif);
+  background-size: cover;
+  background-position: center;
 }

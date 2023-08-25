@@ -1,10 +1,11 @@
 const animals = [
   {
-    name: "Tony",
+    name: "Georgie",
     mood: "🥰",
-    emoji: "🐅",
+    emoji: "🐈",
     hunger: 100,
-    picture: "🐅",
+    picture: "🐈",
+    hasHero: false,
   },
   {
     name: "Harambe",
@@ -57,8 +58,40 @@ const animals = [
     emoji: "🦧",
     hunger: 100,
     habitat: "library",
-    mick: false,
+    hasHero: false,
     picture: "🦧",
+  },
+];
+
+const upgrades = [
+  {
+    type: "passive",
+    price: 2000,
+    name: "Mick",
+    animal: "Oslo",
+  },
+  {
+    type: "passive",
+    price: 2000,
+    name: "Jeremy",
+    animal: "Georgie",
+  },
+  {
+    type: "heal",
+    price: 250,
+    name: "Pet",
+    healAmount: 25,
+  },
+  {
+    type: "heal",
+    price: 500,
+    name: "Treat",
+    healAmount: 55,
+  },
+  {
+    type: "revive",
+    price: 1000,
+    name: "Sam",
   },
 ];
 
@@ -185,7 +218,7 @@ function updateAnimal(animal) {
   let animalH1 = animalElem.querySelector("h1");
   const animalClass = animal.name === "Oslo" ? "font-oslo" : "";
   if (animal.emoji == "🪦") {
-    animalH1.innerHTML = `<h1 onclick="healerSam('${animal.name}')" class="animal ${animalClass}">${animal.emoji}</h1>`;
+    animalH1.innerHTML = `<h1 onclick="buyUpgrade('Sam', '${animal.name}')" class="animal ${animalClass}">${animal.emoji}</h1>`;
   } else {
     animalH1.innerHTML = `<h1 onclick="feedAnimal('${animal.name}')" class="animal ${animalClass}">${animal.emoji}</h1>`;
   }
@@ -252,54 +285,87 @@ setInterval(getMoney, 4000);
 // Initialize the zoo's visual representation
 drawAnimals();
 
-function buyMick() {
-  console.log("buying mick");
-  if (money >= 2000) {
-    money -= 2000;
-    updateMoney();
-    const oslo = findAnimalByName("Oslo");
-    oslo.mick = true;
-    const mick = document.getElementById("mick");
-    mick.innerHTML = "";
+// SECTION UPGRADES
+
+function buyUpgrade(upgradeName, animalName) {
+  const upgrade = upgrades.find((upgrade) => upgrade.name == upgradeName);
+  const enough = verifyIfEnoughMoney(upgrade.price);
+  if (!enough) return;
+  updateMoney();
+  typeOfUpgrade(upgrade, animalName);
+}
+
+// SECTION UPGRADES SERVICE
+
+function typeOfUpgrade(upgrade, animalName) {
+  if (upgrade.type == "passive") {
+    const animal = findAnimalByName(upgrade.animal);
+    animal.hasHero = true;
+    const hero = document.getElementById(upgrade.name);
+    hero.innerHTML = "";
+  }
+  if (upgrade.type == "heal") {
+    const hungriestAnimal = sortAnimals();
+    hungriestAnimal.hunger += upgrade.healAmount;
+    maxHungerLevel(hungriestAnimal);
+    updateAnimal(hungriestAnimal);
+  }
+  if (upgrade.type == "revive") {
+    const deadAnimal = findAnimalByName(animalName);
+    deadAnimal.hunger = 100;
+    updateAnimal(deadAnimal);
+    startMarquee(deadAnimal);
+    effects("revive");
   }
 }
 
-function randomHeal() {
-  if (money >= 500) {
-    money -= 500;
-    updateMoney();
-    const animal = sortAnimals();
-    animal.hunger += 50;
-    if (animal.hunger > 100) {
-      animal.hunger = 100;
-    }
+function effects(effect) {
+  const effectsElem = document.getElementById("effects");
+  if (effect == "revive") {
+    effectsElem.classList.add("healing");
+    setTimeout(() => {
+      effectsElem.classList.remove("healing");
+    }, 1000);
   }
-  drawAnimals();
 }
 
-function healerSam(animalName) {
-  console.log(`Healing ${animalName}.`);
-  const animal = findAnimalByName(animalName);
-  if (money >= 1000) {
-    money -= 1000;
+function maxHungerLevel(animal) {
+  if (animal.hunger > 100) {
     animal.hunger = 100;
-    updateAnimals(animal);
-    startMarquee(animal);
+  }
+}
+
+function verifyIfEnoughMoney(price) {
+  if (money >= price) {
+    return (money -= price);
+  } else {
+    window.alert(
+      `You don't have enough money. You have $${money}, you need $${price}`
+    );
   }
 }
 
 function mick() {
   const oslo = findAnimalByName("Oslo");
-  if (oslo.mick) {
-    oslo.hunger = Math.min(oslo.hunger++, 100);
+  if (oslo.hasHero) {
+    oslo.hunger++;
+    maxHungerLevel(oslo);
   }
-  drawAnimals();
+}
+
+function jeremy() {
+  const georgie = findAnimalByName("Georgie");
+  if (georgie.hasHero) {
+    georgie.hunger++;
+    maxHungerLevel(georgie);
+  }
 }
 
 function sortAnimals() {
-  const animal = animals.sort((a, b) => a.hunger - b.hunger);
-  console.log("[HUNGRIEST ANIMALS]", animal);
-  return animal[0];
+  const animalsSortedByHungriest = animals.sort((a, b) => a.hunger - b.hunger);
+  console.log("[HUNGRIEST ANIMALS]", animalsSortedByHungriest);
+  return animalsSortedByHungriest[0];
 }
 
 setInterval(mick, 1000);
+setInterval(jeremy, 1000);
